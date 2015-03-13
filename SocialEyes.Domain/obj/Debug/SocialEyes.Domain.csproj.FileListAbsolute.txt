@@ -1,0 +1,9 @@
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\SocialEyes.Domain.dll.config
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\SocialEyes.Domain.dll
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\SocialEyes.Domain.pdb
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\Moq.dll
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\Ninject.dll
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\Moq.xml
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\Ninject.xml
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.dll
+c:\users\ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.pdb

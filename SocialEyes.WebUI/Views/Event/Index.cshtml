@@ -1,0 +1,91 @@
+﻿@model IEnumerable<SocialEyes.Domain.Entities.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Event Listings</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <!--
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryID)
+        </th>
+        -->
+        <th>
+            @Html.DisplayNameFor(model => model.EventImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!--
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryID)
+        </td>
+        -->
+        <td>
+            @Html.DisplayFor(modelItem => item.EventImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            € @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventID })
+        </td>
+    </tr>
+}
+
+</table>
