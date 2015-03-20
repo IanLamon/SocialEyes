@@ -23,7 +23,7 @@
             @Html.DisplayNameFor(model => model.EventImage)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.EventName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Date)
@@ -38,11 +38,23 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MinNumber)
+            @Html.DisplayNameFor(model => model.MinNum)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MaxNumber)
+            @Html.DisplayNameFor(model => model.MaxNum)
         </th>
+        <!--
+        <th>
+            @Html.DisplayNameFor(model => model.Gallery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Review)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Results)
+        </th>
+        -->
+
         <th></th>
     </tr>
 
@@ -57,10 +69,10 @@
         </td>
         -->
         <td>
-            @Html.DisplayFor(modelItem => item.EventImage)
+            <img src="@Html.DisplayFor(modelItem => item.EventImage)" width="100px" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.EventName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
@@ -75,11 +87,22 @@
             € @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MinNumber)
+            @Html.DisplayFor(modelItem => item.MinNum)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MaxNumber)
+            @Html.DisplayFor(modelItem => item.MaxNum)
         </td>
+        <!--
+        <th>
+            @Html.DisplayFor(modelItem => item.Gallery)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.Review)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.Results)
+        </th>
+        -->
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EventID }) |
             @Html.ActionLink("Details", "Details", new { id=item.EventID }) |

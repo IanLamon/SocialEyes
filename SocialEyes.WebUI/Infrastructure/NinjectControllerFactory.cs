@@ -7,6 +7,7 @@ using Ninject;
 using Moq;
 using SocialEyes.Domain.Abstract;
 using SocialEyes.Domain.Entities;
+using SocialEyes.Domain.Concrete;
 
 
 namespace SocialEyes.WebUI.Infrastructure
@@ -33,12 +34,12 @@ namespace SocialEyes.WebUI.Infrastructure
             //we will add our bindings here later
             Mock<IEventRepository> mock = new Mock<IEventRepository>();
             mock.Setup(m => m.Events).Returns(new List<Event>{
-                new Event {EventID = 1, Name = "Annual Golf Classic"},
-                new Event {EventID = 2, Name = "Wine Tasting Evening"},
-                new Event {EventID = 3, Name = "Surfing Weekend"}
+                new Event {EventID = 1, EventName = "Annual Golf Classic"},
+                new Event {EventID = 2, EventName = "Wine Tasting Evening"},
+                new Event {EventID = 3, EventName = "Surfing Weekend"}
             }.AsQueryable());
 
-            ninjectKernel.Bind<IEventRepository>().ToConstant(mock.Object);
+            ninjectKernel.Bind<IEventRepository>().To<EFEventRepository>();
         }
     }
 }
