@@ -1036,7 +1036,7 @@ $.extend($.validator, {
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/date
-		date: function( value, element ) {
+		date: function (value, element) {
 			return this.optional(element) || !/Invalid|NaN/.test(new Date(value).toString());
 		},
 
@@ -1242,4 +1242,9 @@ $.format = $.validator.format;
 			});
 		}
 	});
+
+	$(function () {
+	    $("#datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+	});
+
 }(jQuery));

@@ -10,5 +10,8 @@ namespace SocialEyes.Domain.Abstract
     public interface IEventRepository
     {
         IQueryable<Event>Events { get; }
+
+        //code to save event to database
+        void SaveEvent(Event se_event);
     }
 }
