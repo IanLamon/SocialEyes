@@ -51,6 +51,13 @@ namespace SocialEyes.WebUI.Controllers
             }
         } //ends edit post method
 
+        //method to display event detail
+        public ViewResult Details (int id)
+        {
+            Event se_event = repository.Events.FirstOrDefault(i => i.EventID == id);
+            return View(se_event);
+        }
+
         // GET: Event
         //public ActionResult Index()
         //{
