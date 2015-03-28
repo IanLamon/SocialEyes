@@ -58,6 +58,12 @@ namespace SocialEyes.WebUI.Controllers
             return View(se_event);
         }
 
+        //method to create a new event
+        public ViewResult Create()
+        {
+            return View("Edit", new Event());
+        }
+
         // GET: Event
         //public ActionResult Index()
         //{
