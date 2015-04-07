@@ -13,5 +13,8 @@ namespace SocialEyes.Domain.Abstract
 
         //code to save event to database
         void SaveEvent(Event se_event);
+
+        //code to delete an event from the database
+        Event DeleteEvent(int eventId);
     }
 }

@@ -64,6 +64,21 @@ namespace SocialEyes.WebUI.Controllers
             return View("Edit", new Event());
         }
 
+        //method to delete an event
+        public ActionResult Delete(int id)
+        {
+            Event i = repository.DeleteEvent(id);
+
+            if(i != null)
+            {
+                //Display message
+
+            }
+
+            //return View("Admin")
+            return RedirectToAction("Admin");
+        }
+
         // GET: Event
         //public ActionResult Index()
         //{

@@ -47,5 +47,18 @@ namespace SocialEyes.Domain.Concrete
             context.SaveChanges();
         } //ends save/update event method
 
+        //method to delete an event from the database
+        public Event DeleteEvent(int eventId)
+        {
+            Event i = context.Events.Find(eventId);
+
+            if(i != null)
+            {
+                context.Events.Remove(i);
+                context.SaveChanges();
+            }
+            return i;
+        } //ends delete event method
+
     } //ends class
 }
