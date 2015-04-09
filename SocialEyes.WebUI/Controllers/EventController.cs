@@ -31,7 +31,7 @@ namespace SocialEyes.WebUI.Controllers
         //method for admin to edit event
         public ViewResult Edit(int id)
         {
-            Event se_event = repository.Events.FirstOrDefault(i => i.EventID == id);
+            Event se_event = repository.Events.FirstOrDefault(i => i.EventId == id);
             return View(se_event);
         }
 
@@ -54,7 +54,7 @@ namespace SocialEyes.WebUI.Controllers
         //method to display event detail
         public ViewResult Details (int id)
         {
-            Event se_event = repository.Events.FirstOrDefault(i => i.EventID == id);
+            Event se_event = repository.Events.FirstOrDefault(i => i.EventId == id);
             return View(se_event);
         }
 

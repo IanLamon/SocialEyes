@@ -8,9 +8,10 @@ namespace SocialEyes.Domain.Entities
 {
     public class Event
     {
-        public int EventID { get; set; }
-        public int CompanyID { get; set; }
-        public int CategoryID { get; set; }
+        // Primary Key
+        public int EventId { get; set; }
+
+        // Data attributes for User
         public string EventImage { get; set; }
         public string EventName { get; set; }
         public DateTime Date { get; set; }
@@ -22,5 +23,16 @@ namespace SocialEyes.Domain.Entities
         public string Gallery { get; set; }
         public string Review { get; set; }
         public string Results { get; set; }
+
+        // Foreign Key setup
+        public int CompanyId { get; set; }
+        public virtual Company Company { get; set; }
+
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
+
+        // Association - one event has many attendances
+        public virtual ICollection<Attendee> Attendees { get; set; }
+
     }
 }

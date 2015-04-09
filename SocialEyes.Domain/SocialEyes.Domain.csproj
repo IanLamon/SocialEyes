@@ -52,11 +52,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAttendeeRepository.cs" />
+    <Compile Include="Abstract\ICategoryRepository.cs" />
+    <Compile Include="Abstract\ICompanyRepository.cs" />
     <Compile Include="Abstract\IEventRepository.cs" />
+    <Compile Include="Abstract\IPollOptionRepository.cs" />
+    <Compile Include="Abstract\IPollRepository.cs" />
+    <Compile Include="Abstract\IPollVoteRepository.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Concrete\EFAttendeeRepository.cs" />
+    <Compile Include="Concrete\EFCategoryRepository.cs" />
+    <Compile Include="Concrete\EFCompanyRepository.cs" />
     <Compile Include="Concrete\EFdbContext.cs" />
     <Compile Include="Concrete\EFEventRepository.cs" />
+    <Compile Include="Concrete\EFPollOptionRepository.cs" />
+    <Compile Include="Concrete\EFPollRepository.cs" />
+    <Compile Include="Concrete\EFPollVoteRepository.cs" />
+    <Compile Include="Concrete\EFUserRepository.cs" />
+    <Compile Include="Entities\Attendee.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\Poll.cs" />
+    <Compile Include="Entities\PollOption.cs" />
+    <Compile Include="Entities\PollVote.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

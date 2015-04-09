@@ -34,12 +34,19 @@ namespace SocialEyes.WebUI.Infrastructure
             //we will add our bindings here later
             Mock<IEventRepository> mock = new Mock<IEventRepository>();
             mock.Setup(m => m.Events).Returns(new List<Event>{
-                new Event {EventID = 1, EventName = "Annual Golf Classic"},
-                new Event {EventID = 2, EventName = "Wine Tasting Evening"},
-                new Event {EventID = 3, EventName = "Surfing Weekend"}
+                new Event {EventId = 1, EventName = "Annual Golf Classic"},
+                new Event {EventId = 2, EventName = "Wine Tasting Evening"},
+                new Event {EventId = 3, EventName = "Surfing Weekend"}
             }.AsQueryable());
 
+            ninjectKernel.Bind<IAttendeeRepository>().To<EFAttendeeRepository>();
+            ninjectKernel.Bind<ICategoryRepository>().To<EFCategoryRepository>();
+            ninjectKernel.Bind<ICompanyRepository>().To<EFCompanyRepository>();
             ninjectKernel.Bind<IEventRepository>().To<EFEventRepository>();
+            ninjectKernel.Bind<IPollOptionRepository>().To<EFPollOptionRepository>();
+            ninjectKernel.Bind<IPollRepository>().To<EFPollRepository>();
+            ninjectKernel.Bind<IPollVoteRepository>().To<IPollVoteRepository>();
+            ninjectKernel.Bind<IUserRepository>().To<IUserRepository>();
         }
     }
 }

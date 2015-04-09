@@ -20,17 +20,17 @@ namespace SocialEyes.Domain.Concrete
         //method to save/update event to database
         public void SaveEvent (Event se_event)
         {
-            if(se_event.EventID == 0)
+            if(se_event.EventId == 0)
             {
                 context.Events.Add(se_event);
             }
             else
             {
-                Event e = context.Events.Find(se_event.EventID);
+                Event e = context.Events.Find(se_event.EventId);
                 if(e != null)
                 {
-                    e.CompanyID = se_event.CompanyID;
-                    e.CategoryID = se_event.CategoryID;
+                    e.CompanyId = se_event.CompanyId;
+                    e.CategoryId = se_event.CategoryId;
                     e.EventName = se_event.EventName;
                     e.EventImage = se_event.EventImage;
                     e.Date = se_event.Date;
