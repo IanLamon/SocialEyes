@@ -64,5 +64,12 @@ namespace SocialEyes.WebUI.Controllers
             Company company = objContext.DeleteCompany(id);
             return View(company);
         }
+
+        //display details functionality
+        public ViewResult Details(int id)
+        {
+            Company company = objContext.Companies.Where(x => x.CompanyId == id).SingleOrDefault();
+            return View(company);
+        }
     }
 }

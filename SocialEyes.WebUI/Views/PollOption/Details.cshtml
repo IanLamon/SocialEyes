@@ -1,0 +1,42 @@
+﻿@model SocialEyes.Domain.Entities.PollOption
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PollOption</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Poll.PollName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poll.PollName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OptionIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OptionIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OptionText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OptionText)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PollOptionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -279,6 +279,13 @@
     <Content Include="Views\PollVote\Delete.cshtml" />
     <Content Include="Views\PollOption\Delete.cshtml" />
     <Content Include="Views\Poll\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\PollVote\Details.cshtml" />
+    <Content Include="Views\PollOption\Details.cshtml" />
+    <Content Include="Views\Poll\Details.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Attendee\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

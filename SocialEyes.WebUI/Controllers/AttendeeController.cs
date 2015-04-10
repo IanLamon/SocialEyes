@@ -64,5 +64,12 @@ namespace SocialEyes.WebUI.Controllers
             Attendee attendee = objContext.DeleteAttendee(id);
             return View(attendee);
         }
+
+        //display details functionality
+        public ViewResult Details(int id)
+        {
+            Attendee attendee = objContext.Attendees.Where(x => x.AttendeeId == id).SingleOrDefault();
+            return View(attendee);
+        }
     }
 }

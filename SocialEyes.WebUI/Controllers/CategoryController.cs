@@ -64,5 +64,12 @@ namespace SocialEyes.WebUI.Controllers
             Category category = objContext.DeleteCategory(id);
             return View(category);
         }
+
+        //display details functionality
+        public ViewResult Details(int id)
+        {
+            Category category = objContext.Categories.Where(x => x.CategoryId == id).SingleOrDefault();
+            return View(category);
+        }
     }
 }

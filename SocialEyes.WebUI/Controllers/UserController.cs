@@ -64,5 +64,12 @@ namespace SocialEyes.WebUI.Controllers
             User user = objContext.DeleteUser(id);
             return View(user);
         }
+
+        //display details functionality
+        public ViewResult Details(int id)
+        {
+            User user = objContext.Users.Where(x => x.UserId == id).SingleOrDefault();
+            return View(user);
+        }
     }
 }

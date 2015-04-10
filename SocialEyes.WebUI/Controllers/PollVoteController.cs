@@ -64,5 +64,12 @@ namespace SocialEyes.WebUI.Controllers
             PollVote pollVote = objContext.DeletePollVote(id);
             return View(pollVote);
         }
+
+        //display details functionality
+        public ViewResult Details(int id)
+        {
+            PollVote pollVote = objContext.PollVotes.Where(x => x.PollVoteId == id).SingleOrDefault();
+            return View(pollVote);
+        }
     }
 }
