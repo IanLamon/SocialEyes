@@ -258,7 +258,6 @@
     <Content Include="Views\Poll\Index.cshtml" />
     <Content Include="Views\PollVote\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Attendee\Create.cshtml" />
     <Content Include="Views\Company\Create.cshtml" />
     <Content Include="Views\Category\Create.cshtml" />
     <Content Include="Views\Poll\Create.cshtml" />
@@ -286,6 +285,7 @@
     <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Attendee\Details.cshtml" />
+    <Content Include="Views\Attendee\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
