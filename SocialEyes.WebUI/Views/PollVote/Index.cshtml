@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SocialEyes.Domain.Entities.PollVote>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Poll.PollName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PollOption.OptionText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Poll.PollName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PollOption.OptionText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PollVoteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PollVoteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PollVoteId })
+        </td>
+    </tr>
+}
+
+</table>

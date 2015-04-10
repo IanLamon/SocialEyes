@@ -45,8 +45,8 @@ namespace SocialEyes.WebUI.Infrastructure
             ninjectKernel.Bind<IEventRepository>().To<EFEventRepository>();
             ninjectKernel.Bind<IPollOptionRepository>().To<EFPollOptionRepository>();
             ninjectKernel.Bind<IPollRepository>().To<EFPollRepository>();
-            ninjectKernel.Bind<IPollVoteRepository>().To<IPollVoteRepository>();
-            ninjectKernel.Bind<IUserRepository>().To<IUserRepository>();
+            ninjectKernel.Bind<IPollVoteRepository>().To<EFPollVoteRepository>();
+            ninjectKernel.Bind<IUserRepository>().To<EFUserRepository>();
         }
     }
 }
