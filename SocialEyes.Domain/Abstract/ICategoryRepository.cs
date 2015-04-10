@@ -10,5 +10,7 @@ namespace SocialEyes.Domain.Abstract
     public interface ICategoryRepository
     {
         IQueryable<Category> Categories { get; }
+
+        void SaveCategory(Category category);
     }
 }

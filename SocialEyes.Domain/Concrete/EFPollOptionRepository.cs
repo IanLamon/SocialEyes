@@ -16,5 +16,26 @@ namespace SocialEyes.Domain.Concrete
         {
             get { return context.PollOptions; }
         }
+
+        //method to create/update poll option to database
+        public void SavePollOption(PollOption pollOption)
+        {
+            if (pollOption.PollOptionId == 0)
+            {
+                context.PollOptions.Add(pollOption);
+            }
+            else
+            {
+                PollOption po = context.PollOptions.Find(pollOption.PollOptionId);
+                if (po != null)
+                {
+                    po.PollOptionId = pollOption.PollOptionId;
+                    po.OptionIndex = pollOption.OptionIndex;
+                    po.OptionText = pollOption.OptionText;
+                    po.PollId = pollOption.PollId;
+                }
+            }
+            context.SaveChanges();
+        } //ends create/update PollOption method
     }
 }

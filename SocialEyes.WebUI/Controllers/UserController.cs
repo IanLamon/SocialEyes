@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SocialEyes.Domain.Abstract;
+using SocialEyes.Domain.Entities;
 
 namespace SocialEyes.WebUI.Controllers
 {
@@ -20,6 +21,19 @@ namespace SocialEyes.WebUI.Controllers
         public ActionResult Index()
         {
             return View(objContext.Users);
+        }
+
+        //create method
+        public ActionResult Create()
+        {
+            return View(new User());
+        }
+
+        [HttpPost]
+        public ActionResult Create(User user)
+        {
+            objContext.SaveUser(user);
+            return RedirectToAction("Index");
         }
     }
 }

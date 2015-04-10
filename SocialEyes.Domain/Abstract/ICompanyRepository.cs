@@ -10,5 +10,7 @@ namespace SocialEyes.Domain.Abstract
     public interface ICompanyRepository
     {
         IQueryable<Company> Companies { get; }
+
+        void SaveCompany(Company company);
     }
 }

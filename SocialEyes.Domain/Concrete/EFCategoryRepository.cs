@@ -16,5 +16,26 @@ namespace SocialEyes.Domain.Concrete
         {
             get { return context.Categories; }
         }
+
+        //method to create/update category to database
+        public void SaveCategory(Category category)
+        {
+            if (category.CategoryId == 0)
+            {
+                context.Categories.Add(category);
+            }
+            else
+            {
+                Category c = context.Categories.Find(category.CategoryId);
+                if (c != null)
+                {
+                    c.CategoryId = category.CategoryId;
+                    c.Name = category.Name;
+                    c.CategoryImageURL = category.CategoryImageURL;
+                    c.CompanyId = category.CompanyId;
+                }
+            }
+            context.SaveChanges();
+        } //ends create/update category method
     }
 }

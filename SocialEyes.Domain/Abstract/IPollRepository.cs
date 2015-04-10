@@ -10,5 +10,7 @@ namespace SocialEyes.Domain.Abstract
     public interface IPollRepository
     {
         IQueryable<Poll> Polls { get; }
+
+        void SavePoll(Poll poll);
     }
 }

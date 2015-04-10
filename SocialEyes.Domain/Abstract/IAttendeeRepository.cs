@@ -10,5 +10,7 @@ namespace SocialEyes.Domain.Abstract
     public interface IAttendeeRepository
     {
         IQueryable<Attendee> Attendees { get; }
+
+        void SaveAttendee(Attendee attendee);
     }
 }

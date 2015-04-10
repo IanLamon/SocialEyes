@@ -258,6 +258,13 @@
     <Content Include="Views\Poll\Index.cshtml" />
     <Content Include="Views\PollVote\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Attendee\Create.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Poll\Create.cshtml" />
+    <Content Include="Views\PollOption\Create.cshtml" />
+    <Content Include="Views\PollVote\Create.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
