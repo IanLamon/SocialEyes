@@ -59,9 +59,32 @@ namespace SocialEyes.WebUI.Controllers
         }
 
         //method to create a new event
-        public ViewResult Create()
+        public ViewResult Create(int? id)
         {
-            return View("Edit", new Event());
+            if(!id.HasValue)
+            {
+                return View(new Event());
+            }
+            else
+            {
+                Event e = new Event();
+                e.CompanyId = (int)id;
+                return View(e);
+            }
+        }
+        [HttpPost]
+        public ActionResult Create(Event se_event)
+        {
+            repository.SaveEvent(se_event);
+
+            if(se_event.CompanyId == 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Company", "Company", new { id = se_event.CompanyId });
+            }
         }
 
         //method to delete an event

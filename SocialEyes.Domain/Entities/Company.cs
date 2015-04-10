@@ -21,6 +21,9 @@ namespace SocialEyes.Domain.Entities
         public string Telephone { get; set; }
         public string LogoURL { get; set; }
 
+        // Association - one company has many events
+        public virtual ICollection<Event> Events { get; set; }
+        
         // Association - one company has many users
         public virtual ICollection<User> Users { get; set; }
 

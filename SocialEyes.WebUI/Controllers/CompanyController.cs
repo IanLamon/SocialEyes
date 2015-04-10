@@ -71,5 +71,12 @@ namespace SocialEyes.WebUI.Controllers
             Company company = objContext.Companies.Where(x => x.CompanyId == id).SingleOrDefault();
             return View(company);
         }
+
+        //method to display company details with all events
+        public ViewResult Company(int id)
+        {
+            Company company = objContext.Companies.Where(x => x.CompanyId == id).SingleOrDefault();
+            return View(company);
+        }
     }
 }

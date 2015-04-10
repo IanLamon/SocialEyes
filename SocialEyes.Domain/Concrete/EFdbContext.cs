@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,16 @@ namespace SocialEyes.Domain.Concrete
         public DbSet<PollOption> PollOptions { get; set; }
         public DbSet<PollVote> PollVotes { get; set; }
         public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //Company has many events relationship
+            modelBuilder.Entity<Company>().HasKey(p => p.CompanyId);
+            modelBuilder.Entity<Company>().Property(c => c.CompanyId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Event>().HasKey(e => e.EventId);
+            modelBuilder.Entity<Event>().Property(e => e.EventId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Event>().HasRequired(p => p.Company).WithMany(e => e.Events).HasForeignKey(e => e.CompanyId);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

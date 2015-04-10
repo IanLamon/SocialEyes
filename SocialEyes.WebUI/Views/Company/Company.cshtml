@@ -1,0 +1,191 @@
+﻿@model SocialEyes.Domain.Entities.Company
+
+@{
+    ViewBag.Title = "Company";
+}
+
+<h2>Company</h2>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoURL)
+        </dd>
+
+    </dl>
+</div>
+
+<hr/>
+<h2>Current Events</h2>
+@Html.ActionLink("Create New Event", "Create", "Event", new { id = Model.CompanyId }, null)
+<table class="table">
+    <tr>
+        <!--
+        <th>
+            CompanyId
+        </th>
+        <th>
+            Category Id
+        </th>
+        -->
+        <th>
+            Event Image
+        </th>
+        <th>
+           Event Name
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Time
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+           Minimum Numbers
+        </th>
+        <th>
+            Maximim Numbers
+        </th>
+        <!--
+        <th>
+            Gallery
+        </th>
+        <th>
+            Review
+        </th>
+        <th>
+            Results
+        </th>
+        -->
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Events)
+    {
+        <tr>
+            <!--
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            -->
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.EventImage)" width="100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                € @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxNum)
+            </td>
+            <!--
+            <th>
+                @Html.DisplayFor(modelItem => item.Gallery)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Review)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Results)
+            </th>
+            -->
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
