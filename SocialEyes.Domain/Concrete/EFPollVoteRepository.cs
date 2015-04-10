@@ -37,5 +37,18 @@ namespace SocialEyes.Domain.Concrete
             }
             context.SaveChanges();
         } //ends create/update poll vote method
+
+        //method to delete attendee from database
+        public PollVote DeletePollVote(int pollVoteId)
+        {
+            PollVote x = context.PollVotes.Find(pollVoteId);
+
+            if (x != null)
+            {
+                context.PollVotes.Remove(x);
+                context.SaveChanges();
+            }
+            return x;
+        } //ends delete method
     }
 }

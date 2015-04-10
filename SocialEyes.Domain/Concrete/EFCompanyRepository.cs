@@ -42,5 +42,18 @@ namespace SocialEyes.Domain.Concrete
             }
             context.SaveChanges();
         } //ends create/update company method
+
+        //method to delete company from database
+        public Company DeleteCompany(int companyId)
+        {
+            Company x = context.Companies.Find(companyId);
+
+            if (x != null)
+            {
+                context.Companies.Remove(x);
+                context.SaveChanges();
+            }
+            return x;
+        } //ends delete method
     }
 }

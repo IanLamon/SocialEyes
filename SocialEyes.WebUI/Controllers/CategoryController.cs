@@ -57,5 +57,12 @@ namespace SocialEyes.WebUI.Controllers
                 return View(model);
             }
         }
+
+        //delete functionality
+        public ActionResult Delete(int id)
+        {
+            Category category = objContext.DeleteCategory(id);
+            return View(category);
+        }
     }
 }

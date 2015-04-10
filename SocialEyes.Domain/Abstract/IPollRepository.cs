@@ -11,6 +11,10 @@ namespace SocialEyes.Domain.Abstract
     {
         IQueryable<Poll> Polls { get; }
 
+        //code to save poll to database
         void SavePoll(Poll poll);
+
+        //code to delete poll from database
+        Poll DeletePoll(int pollId);
     }
 }

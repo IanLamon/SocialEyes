@@ -11,6 +11,10 @@ namespace SocialEyes.Domain.Abstract
     {
         IQueryable<Category> Categories { get; }
 
+        //code to save category to database
         void SaveCategory(Category category);
+
+        //code to delete category from database
+        Category DeleteCategory(int categoryId);
     }
 }

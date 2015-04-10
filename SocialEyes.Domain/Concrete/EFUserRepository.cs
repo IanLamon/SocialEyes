@@ -40,5 +40,18 @@ namespace SocialEyes.Domain.Concrete
             }
             context.SaveChanges();
         } //ends create/update user method
+
+        //method to delete attendee from database
+        public User DeleteUser(int userId)
+        {
+            User x = context.Users.Find(userId);
+
+            if (x != null)
+            {
+                context.Users.Remove(x);
+                context.SaveChanges();
+            }
+            return x;
+        } //ends delete method
     }
 }

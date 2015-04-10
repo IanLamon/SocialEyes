@@ -11,6 +11,10 @@ namespace SocialEyes.Domain.Abstract
     {
         IQueryable<Attendee> Attendees { get; }
 
+        //code to save attendee to database
         void SaveAttendee(Attendee attendee);
+
+        //code to delete attendee from database
+        Attendee DeleteAttendee(int attendeeId);
     }
 }

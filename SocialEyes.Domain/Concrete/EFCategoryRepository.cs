@@ -37,5 +37,18 @@ namespace SocialEyes.Domain.Concrete
             }
             context.SaveChanges();
         } //ends create/update category method
+
+        //method to delete category from database
+        public Category DeleteCategory(int categoryId)
+        {
+            Category x = context.Categories.Find(categoryId);
+
+            if (x != null)
+            {
+                context.Categories.Remove(x);
+                context.SaveChanges();
+            }
+            return x;
+        } //ends delete method
     }
 }
