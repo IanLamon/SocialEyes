@@ -35,5 +35,27 @@ namespace SocialEyes.WebUI.Controllers
             objContext.SaveCompany(company);
             return RedirectToAction("Index");
         }
+
+        //Update functionality
+        public ActionResult Edit(int id)
+        {
+            Company company = objContext.Companies.Where(
+                x => x.CompanyId == id).SingleOrDefault();
+            return View(company);
+        }
+        [HttpPost]
+        public ActionResult Edit(Company model)
+        {
+            if (ModelState.IsValid)
+            {
+                objContext.SaveCompany(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //problem processing request
+                return View(model);
+            }
+        }
     }
 }

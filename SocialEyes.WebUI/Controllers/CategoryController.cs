@@ -35,5 +35,27 @@ namespace SocialEyes.WebUI.Controllers
             objContext.SaveCategory(category);
             return RedirectToAction("Index");
         }
+
+        //Update functionality
+        public ActionResult Edit(int id)
+        {
+            Category category = objContext.Categories.Where(
+                x => x.CategoryId == id).SingleOrDefault();
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult Edit(Category model)
+        {
+            if (ModelState.IsValid)
+            {
+                objContext.SaveCategory(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //problem processing request
+                return View(model);
+            }
+        }
     }
 }

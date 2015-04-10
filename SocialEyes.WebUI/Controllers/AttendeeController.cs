@@ -35,5 +35,27 @@ namespace SocialEyes.WebUI.Controllers
             objContext.SaveAttendee(attendee);
             return RedirectToAction("Index");
         }
+
+        //Update functionality
+        public ActionResult Edit(int id)
+        {
+            Attendee attendee = objContext.Attendees.Where(
+                x => x.AttendeeId == id).SingleOrDefault();
+            return View(attendee);
+        }
+        [HttpPost]
+        public ActionResult Edit(Attendee model)
+        {
+            if(ModelState.IsValid)
+            {
+                objContext.SaveAttendee(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //problem processing request
+                return View(model);
+            }
+        }
     }
 }

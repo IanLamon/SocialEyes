@@ -35,5 +35,27 @@ namespace SocialEyes.WebUI.Controllers
             objContext.SavePoll(poll);
             return RedirectToAction("Index");
         }
+
+        //Update functionality
+        public ActionResult Edit(int id)
+        {
+            Poll poll = objContext.Polls.Where(
+                x => x.PollId == id).SingleOrDefault();
+            return View(poll);
+        }
+        [HttpPost]
+        public ActionResult Edit(Poll model)
+        {
+            if (ModelState.IsValid)
+            {
+                objContext.SavePoll(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //problem processing request
+                return View(model);
+            }
+        }
     }
 }
