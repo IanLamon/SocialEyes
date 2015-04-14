@@ -102,6 +102,13 @@ namespace SocialEyes.WebUI.Controllers
             return RedirectToAction("Company", "Company", new { id = i.CompanyId });
         }
 
+        //method to display event details with all attendees
+        public ViewResult Event(int id)
+        {
+            Event se_event = repository.Events.Where(x => x.EventId == id).SingleOrDefault();
+            return View(se_event);
+        }
+
         // GET: Event
         //public ActionResult Index()
         //{
