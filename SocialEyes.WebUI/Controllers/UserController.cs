@@ -33,7 +33,7 @@ namespace SocialEyes.WebUI.Controllers
         public ActionResult Create(User user)
         {
             objContext.SaveUser(user);
-            return RedirectToAction("Index");
+            return RedirectToAction("Company", "Company", new { id = user.CompanyId });
         }
 
         //Update functionality
@@ -71,5 +71,7 @@ namespace SocialEyes.WebUI.Controllers
             User user = objContext.Users.Where(x => x.UserId == id).SingleOrDefault();
             return View(user);
         }
+
+        
     }
 }
