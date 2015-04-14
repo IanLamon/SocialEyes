@@ -49,7 +49,7 @@ namespace SocialEyes.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 objContext.SaveCompany(model);
-                return RedirectToAction("Index");
+                return RedirectToAction("Company", "Company", new { id = model.CompanyId });
             }
             else
             {

@@ -287,6 +287,7 @@
     <Content Include="Views\Attendee\Details.cshtml" />
     <Content Include="Views\Attendee\Create.cshtml" />
     <Content Include="Views\Company\Company.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

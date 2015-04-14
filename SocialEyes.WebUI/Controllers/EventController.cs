@@ -42,7 +42,7 @@ namespace SocialEyes.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveEvent(se_event);
-                return RedirectToAction("Admin");
+                return RedirectToAction("Company", "Company", new { id = se_event.CompanyId });
             }
             else
             {
@@ -59,7 +59,7 @@ namespace SocialEyes.WebUI.Controllers
         }
 
         //method to create a new event
-        public ViewResult Create(int? id)
+        public ActionResult Create(int? id)
         {
             if(!id.HasValue)
             {
@@ -98,8 +98,8 @@ namespace SocialEyes.WebUI.Controllers
 
             }
 
-            //return View("Admin")
-            return RedirectToAction("Admin");
+            //return View("Dashboard")
+            return RedirectToAction("Company", "Company", new { id = i.CompanyId });
         }
 
         // GET: Event
