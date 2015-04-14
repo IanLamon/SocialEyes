@@ -118,13 +118,9 @@
 </div>
 
 <h3>Confirm Attendance:</h3>
-<table>
-    <tr>
-        <th>Tick box to confirm attendance: </th>
-
-    </tr>
-
-</table>
+<p>
+    @Html.ActionLink("Confirm", "Create", "Attendee", new { eventId = Model.EventId, eventName = Model.EventName, companyId = Model.CompanyId, userName = ViewBag.UserName }, null)
+</p>
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |

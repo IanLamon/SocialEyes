@@ -26,6 +26,14 @@ namespace SocialEyes.WebUI.Controllers
         //create method
         public ActionResult Create()
         {
+            string eventId = Request.QueryString["eventId"];
+            string eventName = Request.QueryString["eventName"];
+            string userName = Request.QueryString["username"];
+            int companyId = int.Parse(Request.QueryString["companyId"]);
+            ViewBag.EventId = eventId;
+            ViewBag.EventName = eventName;
+            ViewBag.UserName = userName;
+            ViewBag.CompanyId = companyId;
             return View(new Attendee());
         }
 
@@ -33,7 +41,7 @@ namespace SocialEyes.WebUI.Controllers
         public ActionResult Create(Attendee attendee)
         {
             objContext.SaveAttendee(attendee);
-            return RedirectToAction("Index");
+            return RedirectToAction("Company", "Company", new { id = 2 });
         }
 
         //Update functionality

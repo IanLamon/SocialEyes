@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using SocialEyes.Domain.Abstract;
 using SocialEyes.Domain.Entities;
 
@@ -55,6 +56,7 @@ namespace SocialEyes.WebUI.Controllers
         public ViewResult Details (int id)
         {
             Event se_event = repository.Events.FirstOrDefault(i => i.EventId == id);
+            ViewBag.UserName = User.Identity.Name;
             return View(se_event);
         }
 

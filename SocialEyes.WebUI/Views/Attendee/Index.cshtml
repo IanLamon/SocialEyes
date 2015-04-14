@@ -6,13 +6,16 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SE_Event.EventImage)
+            @Html.DisplayNameFor(model => model.SE_Event.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Surname)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.User.Email)
@@ -26,7 +29,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SE_Event.EventImage)
+            @Html.DisplayFor(modelItem => item.SE_Event.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Surname)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.User.Email)
