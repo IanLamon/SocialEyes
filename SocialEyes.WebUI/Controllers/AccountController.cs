@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SocialEyes.WebUI.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SocialEyes.WebUI.Controllers
 {
@@ -151,7 +152,14 @@ namespace SocialEyes.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    Surname = model.Surname,
+                    CompanyCode = model.CompanyCode
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -163,7 +171,7 @@ namespace SocialEyes.WebUI.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Create", "User");
+                    return RedirectToAction("Company", "Company", new { id = user.CompanyCode });
                 }
                 AddErrors(result);
             }
@@ -367,7 +375,14 @@ namespace SocialEyes.WebUI.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    Surname = model.Surname,
+                    CompanyCode = model.CompanyCode
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

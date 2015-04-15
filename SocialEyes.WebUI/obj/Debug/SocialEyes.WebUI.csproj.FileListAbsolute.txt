@@ -57,5 +57,7 @@ C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\b
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.Migrations.Init.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.csproj.GenerateResource.Cache
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.dll
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.pdb

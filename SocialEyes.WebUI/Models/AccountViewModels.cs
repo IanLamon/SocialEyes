@@ -8,6 +8,10 @@ namespace SocialEyes.WebUI.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        //adding properties to the default application user
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public int CompanyCode { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -79,6 +83,17 @@ namespace SocialEyes.WebUI.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //adding properties to the default application user
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
+
+        [Required]
+        public int CompanyCode { get; set; }
+
     }
 
     public class ResetPasswordViewModel
