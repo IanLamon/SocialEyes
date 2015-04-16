@@ -22,9 +22,6 @@ namespace SocialEyes.Domain.Entities
         public int CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
-        // Association - one user has many attendances
-        public virtual ICollection<Attendee> Attendees { get; set; }
-
         // Association - one user has many poll votes
         public virtual ICollection<PollVote> PollVotes { get; set; }
     }

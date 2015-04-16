@@ -58,13 +58,6 @@ namespace SocialEyes.Domain.Concrete
             modelBuilder.Entity<Attendee>().Property(a => a.AttendeeId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Attendee>().HasRequired(e => e.SE_Event).WithMany(a => a.Attendees).HasForeignKey(a => a.EventId);
 
-            //User has many attendances
-            modelBuilder.Entity<User>().HasKey(u => u.UserId);
-            modelBuilder.Entity<User>().Property(u => u.UserId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Attendee>().HasKey(a => a.AttendeeId);
-            modelBuilder.Entity<Attendee>().Property(a => a.AttendeeId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Attendee>().HasRequired(u => u.User).WithMany(a => a.Attendees).HasForeignKey(a => a.UserId);
-
             //User has many poll votes
             modelBuilder.Entity<User>().HasKey(u => u.UserId);
             modelBuilder.Entity<User>().Property(u => u.UserId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);

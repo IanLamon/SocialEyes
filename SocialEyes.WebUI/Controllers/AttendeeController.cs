@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using SocialEyes.Domain.Abstract;
 using SocialEyes.Domain.Entities;
+using Microsoft.AspNet.Identity;
+using SocialEyes.WebUI.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SocialEyes.WebUI.Controllers
 {
@@ -26,15 +29,27 @@ namespace SocialEyes.WebUI.Controllers
         //create method
         public ActionResult Create()
         {
-            string eventId = Request.QueryString["eventId"];
+            //current user
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            int eventId;
+            int.TryParse(Request.QueryString["eventId"], out eventId);
             string eventName = Request.QueryString["eventName"];
-            string userName = Request.QueryString["username"];
-            int companyId = int.Parse(Request.QueryString["companyId"]);
-            ViewBag.EventId = eventId;
+
             ViewBag.EventName = eventName;
-            ViewBag.UserName = userName;
-            ViewBag.CompanyId = companyId;
-            return View(new Attendee());
+            ViewBag.CompanyId = currentUser.CompanyCode;
+
+            //attendee object
+            Attendee currentAttendee = new Attendee
+            {
+                EventId = eventId,
+                FirstName = currentUser.FirstName,
+                Surname = currentUser.Surname,
+                CompanyId = currentUser.CompanyCode,
+                Email = currentUser.Email,
+            };
+            
+            return View(currentAttendee);
         }
 
         [HttpPost]

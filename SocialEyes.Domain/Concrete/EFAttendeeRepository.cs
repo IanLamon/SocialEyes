@@ -32,7 +32,10 @@ namespace SocialEyes.Domain.Concrete
                     a.AttendeeId = attendee.AttendeeId;
                     a.Attending = attendee.Attending;
                     a.EventId = attendee.EventId;
-                    a.UserId = attendee.UserId;
+                    a.FirstName = attendee.FirstName;
+                    a.Surname = attendee.Surname;
+                    a.Email = attendee.Email;
+                    a.CompanyId = attendee.CompanyId;
                 }
             }
             context.SaveChanges();

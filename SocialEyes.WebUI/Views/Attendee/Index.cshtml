@@ -12,16 +12,19 @@
             @Html.DisplayNameFor(model => model.SE_Event.EventName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.FirstName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.Surname)
+            @Html.DisplayNameFor(model => model.Surname)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.Email)
+            @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Attending)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyId)
         </th>
         <th></th>
     </tr>
@@ -32,16 +35,19 @@
             @Html.DisplayFor(modelItem => item.SE_Event.EventName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.User.FirstName)
+            @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.User.Surname)
+            @Html.DisplayFor(modelItem => item.Surname)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.User.Email)
+            @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Attending)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AttendeeId }) |
