@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using SocialEyes.Domain.Abstract;
 using SocialEyes.Domain.Entities;
+using Microsoft.AspNet.Identity;
+using SocialEyes.WebUI.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SocialEyes.WebUI.Controllers
 {
@@ -32,8 +35,13 @@ namespace SocialEyes.WebUI.Controllers
         [HttpPost]
         public ActionResult Create(PollVote pollVote)
         {
+            //current user
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            
             objContext.SavePollVote(pollVote);
-            return RedirectToAction("Index");
+
+            return RedirectToAction("Company", "Company", new { id = currentUser.CompanyCode });
         }
 
         //Update functionality

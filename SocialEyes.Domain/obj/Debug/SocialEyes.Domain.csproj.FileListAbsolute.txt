@@ -9,5 +9,6 @@ C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\Moq.xml
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\bin\Debug\Ninject.xml
+C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.dll
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.pdb

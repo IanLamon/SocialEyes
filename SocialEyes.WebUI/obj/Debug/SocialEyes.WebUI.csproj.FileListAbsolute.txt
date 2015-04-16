@@ -58,7 +58,7 @@ C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\b
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.Migrations.init.resources
+C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.Migrations.Init1.resources
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.csproj.GenerateResource.Cache
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.dll
 C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.pdb
-C:\Users\Ian\documents\visual studio 2013\Projects\SocialEyes\SocialEyes.WebUI\obj\Debug\SocialEyes.WebUI.Migrations.Init1.resources

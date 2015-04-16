@@ -71,5 +71,12 @@ namespace SocialEyes.WebUI.Controllers
             Poll poll = objContext.Polls.Where(x => x.PollId == id).SingleOrDefault();
             return View(poll);
         }
+
+        //method to display poll details with all poll options
+        public ViewResult Poll(int id)
+        {
+            Poll poll = objContext.Polls.Where(x => x.PollId == id).SingleOrDefault();
+            return View(poll);
+        }
     }
 }
