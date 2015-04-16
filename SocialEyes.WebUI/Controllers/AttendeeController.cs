@@ -8,6 +8,7 @@ using SocialEyes.Domain.Entities;
 using Microsoft.AspNet.Identity;
 using SocialEyes.WebUI.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.IO;
 
 namespace SocialEyes.WebUI.Controllers
 {
@@ -113,8 +114,37 @@ namespace SocialEyes.WebUI.Controllers
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
             var currentUser = manager.FindById(User.Identity.GetUserId());
             ViewBag.CompanyId = currentUser.CompanyCode;
+            ViewBag.EventId = id;
 
             return View(objContext.Attendees.Where(x => x.EventId == id));
+        }
+
+        //method to export attendee list to csv file
+        public void ExportClientsListToCSV(int id)
+        {
+
+            StringWriter sw = new StringWriter();
+
+            sw.WriteLine("\"Event Name\",\"First Name\",\"Surname\",\"Email\",\"Attending\"");
+
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment;filename=Attendees.csv");
+            Response.ContentType = "text/csv";
+
+            foreach (var line in objContext.Attendees.Where(x => x.EventId == id))
+            {
+                sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\"",
+                    line.SE_Event.EventName,
+                    line.FirstName,
+                    line.Surname,
+                    line.Email,
+                    line.Attending));
+            }
+
+            Response.Write(sw.ToString());
+
+            Response.End();
+
         }
     }
 }
