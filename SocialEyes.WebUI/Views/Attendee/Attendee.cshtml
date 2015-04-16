@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SocialEyes.Domain.Entities.Attendee>
+
+@{
+    ViewBag.Title = "Attendee";
+}
+
+<h2>Attendees</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SE_Event.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attending)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SE_Event.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attending)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AttendeeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AttendeeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AttendeeId })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Back to Dashboard", "Company", "Company", new { id = @ViewBag.CompanyId }, null)

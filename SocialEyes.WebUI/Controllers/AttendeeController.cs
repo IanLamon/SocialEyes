@@ -37,7 +37,7 @@ namespace SocialEyes.WebUI.Controllers
             string eventName = Request.QueryString["eventName"];
 
             ViewBag.EventName = eventName;
-            ViewBag.CompanyId = currentUser.CompanyCode;
+            
 
             //attendee object
             Attendee currentAttendee = new Attendee
@@ -67,7 +67,7 @@ namespace SocialEyes.WebUI.Controllers
             attendee.Email = currentUser.Email;
             
             objContext.SaveAttendee(attendee);
-            return RedirectToAction("Company", "Company", new { id = 2 });
+            return RedirectToAction("Company", "Company", new { id = currentUser.CompanyCode });
         }
 
         //Update functionality
@@ -104,6 +104,17 @@ namespace SocialEyes.WebUI.Controllers
         {
             Attendee attendee = objContext.Attendees.Where(x => x.AttendeeId == id).SingleOrDefault();
             return View(attendee);
+        }
+
+        //method to display attendees to a particular event
+        public ViewResult Attendee(int id)
+        {
+            //current user
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            ViewBag.CompanyId = currentUser.CompanyCode;
+
+            return View(objContext.Attendees.Where(x => x.EventId == id));
         }
     }
 }
