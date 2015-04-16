@@ -48,6 +48,8 @@ namespace SocialEyes.WebUI.Controllers
                 CompanyId = currentUser.CompanyCode,
                 Email = currentUser.Email,
             };
+
+
             
             return View(currentAttendee);
         }
@@ -55,6 +57,15 @@ namespace SocialEyes.WebUI.Controllers
         [HttpPost]
         public ActionResult Create(Attendee attendee)
         {
+            //current user
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+
+            attendee.FirstName = currentUser.FirstName;
+            attendee.Surname = currentUser.Surname;
+            attendee.CompanyId = currentUser.CompanyCode;
+            attendee.Email = currentUser.Email;
+            
             objContext.SaveAttendee(attendee);
             return RedirectToAction("Company", "Company", new { id = 2 });
         }
