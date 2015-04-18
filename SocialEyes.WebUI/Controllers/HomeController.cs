@@ -26,5 +26,15 @@ namespace SocialEyes.WebUI.Controllers
 
             return View();
         }
+
+        public ActionResult Benefits()
+        {
+            return View();
+        }
+
+        public ActionResult Clients()
+        {
+            return View();
+        }
     }
 }
