@@ -4,92 +4,23 @@
     ViewBag.Title = "Company";
 }
 
-<h2>Company</h2>
-
-<div>
-    <h4>Company</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompanyName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address4)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address4)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telephone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telephone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LogoURL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LogoURL)
-        </dd>
-
-    </dl>
+<div class="pull-right">
+    <img src="@Html.DisplayFor(model => model.LogoURL)" />
 </div>
 
-<hr/>
-<h2>Current Events</h2>
+<h2>@Html.DisplayFor(model => model.CompanyName)</h2>
+<div>
+    @Html.DisplayFor(model => model.Address1), @Html.DisplayFor(model => model.Address2), @Html.DisplayFor(model => model.Address3), @Html.DisplayFor(model => model.Address4)<br /><br /><br />
+    <h4>Committee Contact Details:</h4>
+    Email: <a href="mailto:@Html.DisplayFor(model => model.Email)">@Html.DisplayFor(model => model.Email)</a><br />
+    Telephone: @Html.DisplayFor(model => model.Telephone) <br /><br />
+
+<hr style="height:3px; color:#004A61; background-color:#004A61;"/>
+    
+<h2 style="color:#004A61;">Upcoming Events</h2>
 @Html.ActionLink("Create New Event", "Create", "Event", new { id = Model.CompanyId }, null)
 <table class="table">
     <tr>
-        <!--
-        <th>
-            CompanyId
-        </th>
-        <th>
-            Category Id
-        </th>
-        -->
         <th>
             Event Image
         </th>
@@ -103,28 +34,8 @@
             Time
         </th>
         <th>
-            Description
-        </th>
-        <th>
             Price
         </th>
-        <th>
-           Minimum Numbers
-        </th>
-        <th>
-            Maximim Numbers
-        </th>
-        <!--
-        <th>
-            Gallery
-        </th>
-        <th>
-            Review
-        </th>
-        <th>
-            Results
-        </th>
-        -->
 
         <th></th>
     </tr>
@@ -132,14 +43,6 @@
     @foreach (var item in Model.Events)
     {
         <tr>
-            <!--
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            -->
             <td>
                 <img src="@Html.DisplayFor(modelItem => item.EventImage)" width="100px" />
             </td>
@@ -147,34 +50,14 @@
                 @Html.DisplayFor(modelItem => item.EventName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @item.Date.ToString("dd MMMM yyyy")
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @item.Time.ToString("HH:mm")
             </td>
             <td>
                 € @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MinNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaxNum)
-            </td>
-            <!--
-            <th>
-                @Html.DisplayFor(modelItem => item.Gallery)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Review)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Results)
-            </th>
-            -->
             <td>
                 @Html.ActionLink("Attendees", "Attendee", "Attendee", new { id = item.EventId }, null) |
                 @Html.ActionLink("Details", "Details", "Event", new { id = item.EventId }, null) |
@@ -185,15 +68,17 @@
     }
 
 </table>
-
-<hr />
-<h2>Vote for our next Event</h2>
-<p>
-    @Html.ActionLink("Cast your vote here", "Poll", "Poll", new { id = 1 }, null)
-</p>
-
-<hr/>
-<h3>Suggest an event</h3>
+    <hr style="height:3px; color:#004A61; background-color:#004A61;" />
+    <div style="background-color:#004A61; border-radius:20px 0 20px 0; padding:10px; box-shadow: 6px 6px 6px #777;">
+        <h2 style="color:#fff;">Event Poll</h2>
+        <p style="color:#fff;">
+            Vote for our next Event<br />
+            Have your say!<br />
+            @Html.ActionLink("Cast your vote here", "Poll", "Poll", new { id = 1 }, null)
+        </p>
+    </div>
+    <hr style="height:3px; color:#004A61; background-color:#004A61;" />
+    <h2 style="color:#004A61;">Suggest an event</h2>
 <form class="form-horizontal">
     <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Name</label>
@@ -219,6 +104,46 @@
         </div>
     </div>
 </form>
+    <hr style="height:3px; color:#004A61; background-color:#004A61;" />
+    <h2 style="color:#004A61;">Previous Events</h2>
+    
+    <table class="table">
+        <tr>
+            <th>
+                Event Image
+            </th>
+            <th>
+                Event Name
+            </th>
+            <th>
+                Date
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Events)
+        {
+            <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.EventImage)" width="100px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @item.Date.ToString("dd MMMM yyyy")
+                </td>
+                <td>
+                    @Html.ActionLink("Attendees", "Attendee", "Attendee", new { id = item.EventId }, null) |
+                    @Html.ActionLink("Details", "Details", "Event", new { id = item.EventId }, null) |
+                    @Html.ActionLink("Edit", "Edit", "Event", new { id = item.EventId }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Event", new { id = item.EventId }, new { onclick = "return confirm('Are you sure you wish to delete this event?');" })
+                </td>
+            </tr>
+        }
+
+    </table>
 
 <p>
     @Html.ActionLink("Edit Company Details", "Edit", new { id = Model.CompanyId })
