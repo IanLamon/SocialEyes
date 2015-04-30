@@ -2,28 +2,32 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" style="color:darkgreen; border-radius:5px; box-shadow:0px 2px 5px #808080">
-    <h1>SocialEyes...</h1>
-    <p class="lead"><i>"Making work life social"</i></p>
-    <p><a class="btn btn-primary btn-lg" @Html.ActionLink("Sign up today", "Register", "Account")</a></p>
+<div class="jumbotron" style="color:#414042; padding-top: 0px; border-radius:5px; box-shadow:0px 2px 5px #808080">
+    <p class="pull-right" style="padding-top: 40px;"><img src="~/Content/Images/SocialEyesLogo.png" style="height:200px;"/></p>
+    <div style="padding-top: 48px; width:50%;">
+        <p class="lead" style="color:#004A61;"><i>"making work life social"</i></p>
+        <p>Sign your company up today and step into a world where company events are easier to manage, easier to attend and more fun for everyone</p>
+        <p><a class="btn btn-primary btn-lg" style="background-color:#004A61; border-color:#004A61;" @Html.ActionLink("Sign your company up today", "Create", "Company")</a></p>
+    </div>
+    
 </div>
 
 <div class="row">
-    <div class="col-md-4" style="color:darkgreen">
+    <div class="col-md-4" style="color:#004A61">
         <h2>Why SocialEyes?</h2>
-        <p>
+        <p style="color:#414042">
             Click to learn as to why SocialEyes can benefit your Social Committee!
         </p>
-        <p><a class="btn btn-danger" @Html.ActionLink("The 'Why'?", "Benefits", "Home")</a></p>
+        <p><a class="btn btn-primary" style="background-color:#004A61; border-color:#004A61;" @Html.ActionLink("The 'Why'?", "Benefits", "Home")</a></p>
     </div>
-    <div class="col-md-4" style="color:darkgreen">
+    <div class="col-md-4" style="color:#004A61">
         <h2>Register now!</h2>
-        <p>You are moments away from making life easier. Please click here. </p>
-        <p><a class="btn btn-warning" @Html.ActionLink("Register", "Register", "Account")</a></p>
+        <p style="color:#414042">You are moments away from making life easier. Please click here. </p>
+        <p><a class="btn btn-primary" style="background-color:#004A61; border-color:#004A61;" @Html.ActionLink("Register", "Register", "Account")</a></p>
     </div>
-    <div class="col-md-4" style="color:darkgreen">
+    <div class="col-md-4" style="color:#004A61">
         <h2>Who is using Socialise?</h2>
-        <p>Click in to see who else has made life easier with SocialEyes</p>
-        <p><a class="btn btn-success" @Html.ActionLink("Clients", "Clients", "Home")</a></p>
+        <p style="color:#414042">Click in to see who else has made life easier with SocialEyes</p>
+        <p><a class="btn btn-primary" style="background-color:#004A61; border-color:#004A61;" @Html.ActionLink("Clients", "Clients", "Home")</a></p>
     </div>
 </div>
