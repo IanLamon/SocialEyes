@@ -7,47 +7,17 @@
 <h2>@Html.DisplayFor(model => model.EventName)</h2>
 
 <div>
-    <h4>Event</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompanyId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CategoryId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EventImage)
-        </dt>
-
-        <dd>
-            <img src="@Html.DisplayFor(model => model.EventImage)" width="400px" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EventName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EventName)
-        </dd>
-
+    <div style="display:inline-block;">
+        <img class="thumbnail" src="@Html.DisplayFor(model => model.EventImage)" width="400px" />
+    </div>
+    <dl class="dl-horizontal" style="width:50%; display:inline-block; vertical-align: top;">
         <dt>
             @Html.DisplayNameFor(model => model.Date)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Model.Date.ToString("dd MMMM yyyy")
         </dd>
 
         <dt>
@@ -55,7 +25,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Time)
+           @Model.Time.ToString("HH:mm")
         </dd>
 
         <dt>
@@ -71,23 +41,23 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Price)
+            €@Html.DisplayFor(model => model.Price)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MinNum)
+            Minimum Numbers
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MinNum)
+            @Html.DisplayFor(model => model.MinNum) people
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaxNum)
+            Maximum Numbers
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaxNum)
+            @Html.DisplayFor(model => model.MaxNum) people
         </dd>
 
         <dt>
