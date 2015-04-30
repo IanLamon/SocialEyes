@@ -12,3 +12,17 @@ C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.Domain\
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.dll
 C:\Users\Ian\Documents\Visual Studio 2013\Projects\SocialEyes\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.pdb
+C:\Latest\SocialEyes.Domain\bin\Debug\SocialEyes.Domain.dll.config
+C:\Latest\SocialEyes.Domain\bin\Debug\SocialEyes.Domain.dll
+C:\Latest\SocialEyes.Domain\bin\Debug\SocialEyes.Domain.pdb
+C:\Latest\SocialEyes.Domain\bin\Debug\EntityFramework.dll
+C:\Latest\SocialEyes.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Latest\SocialEyes.Domain\bin\Debug\Moq.dll
+C:\Latest\SocialEyes.Domain\bin\Debug\Ninject.dll
+C:\Latest\SocialEyes.Domain\bin\Debug\EntityFramework.xml
+C:\Latest\SocialEyes.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Latest\SocialEyes.Domain\bin\Debug\Moq.xml
+C:\Latest\SocialEyes.Domain\bin\Debug\Ninject.xml
+C:\Latest\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.csprojResolveAssemblyReference.cache
+C:\Latest\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.dll
+C:\Latest\SocialEyes.Domain\obj\Debug\SocialEyes.Domain.pdb

@@ -198,6 +198,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Categories\1.jpg" />
+    <Content Include="Content\Images\Categories\Citigroup.png" />
+    <Content Include="Content\Images\Categories\deutsche.jpg" />
+    <Content Include="Content\Images\Categories\jp.png" />
+    <Content Include="Content\Images\Categories\login.jpeg" />
     <Content Include="Content\Images\Events\1.jpg" />
     <Content Include="Content\Images\Events\2.jpg" />
     <Content Include="Content\Images\Events\3.jpg" />
