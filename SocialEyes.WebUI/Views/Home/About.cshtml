@@ -2,12 +2,16 @@
     ViewBag.Title = "About";
 }
 <h2>SocialEyes' Story</h2>
-<h3><i>"..Like I've enough to be doing here with my own work than chasing people down for money and numbers"</i></h3>
+<hr />
 
-<div style="background-color:lightgray; border-radius: 10px;">
-    <p style="font-size: 20px;color:darkgreen; padding: 5px;">SocialEyes was born out of identifying a problem that needed fixing. Being on the receiving end of such practices, we recognised that life could be made much easier. Recognition of this is when Social Eyes was born.</p><br />
-    <p style="font-size: 20px;color:darkgreen; padding: 5px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><br/>
-    <p style="font-size: 20px;color:darkgreen; padding: 5px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    <p style="float:right;"><a class="btn btn-warning" @Html.ActionLink("Register", "Register", "Account")</a></p>
-    <p style="float:right;"><a class="btn btn-success" @Html.ActionLink("Home", "Index", "Home")</a></p>
+<p class="pull-right"><img src="~/Content/Images/SocialEyesLogo.png" /></p>
+
+<h3 style="width:50%; text-align: justify;"><i>"..Like I've enough to be doing here with my own work than chasing people down for money and numbers"</i></h3>
+
+<div style="width:50%; text-align: justify;">
+    <p>SocialEyes was born out of identifying a problem that needed fixing. Being on the receiving end of such practices, we recognised that life could be made much easier. Recognition of this is when Social Eyes was born.</p><br />
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><br/>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    @Html.ActionLink("Register", "Register", "Account") | 
+    @Html.ActionLink("Home", "Index", "Home")
 </div>

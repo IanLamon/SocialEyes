@@ -1,21 +1,28 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<div style="border-radius:10px;background-color:lightgreen;margin:auto; width:500px; padding: 20px; height: 320px;">
-    <h2>Here is how to contact us</h2>
-    <h3>Feel free to drop a line anytime</h3>
+<div>
+    <h2>Contact Us</h2>
+    <hr />
+    <p class="pull-right"><img src="~/Content/Images/SocialEyesLogo.png" /></p>
 
-    <address>
-        6, Maxwell House<br />
-        Bewley Court, Dublin 1,<br />
-        <abbr title="Phone">P:</abbr>
-        01 2796847
-    </address>
+    <div style="width:50%;">
+        <h4>Feel free to drop a line anytime</h4>
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-    <p style="float:right;"><a class="btn btn-warning" @Html.ActionLink("Register", "Register", "Account")</a></p>
-    <p style="float:right;"><a class="btn btn-success" @Html.ActionLink("Home", "Index", "Home")</a></p>
+        <address>
+            6, Maxwell House<br />
+            Bewley Court, Dublin 1,<br />
+            <abbr title="Phone">P:</abbr>
+            01 2796847
+        </address>
+
+        <address>
+            <strong>Support:</strong>   <a href="mailto:support@socialeyes.com">support@socialeyes.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:marketing@socialeyes.com">marketing@socialeyes.com</a>
+        </address>
+    </div>
+    <br />
+    <br />
+    @Html.ActionLink("Register", "Register", "Account") | 
+    @Html.ActionLink("Home", "Index", "Home")
 </div>

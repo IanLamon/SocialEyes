@@ -3,17 +3,18 @@
     ViewBag.Title = "Clients";
 }
 
-<h1 style="font-size: 36px; color:darkgreen;">Look at the our Clients, and the number is growing!!</h1>
-<div>
-    <p style="float:right;"><a class="btn btn-warning" @Html.ActionLink("Register", "Register", "Account")</a></p>
-    <p style="float:right;"><a class="btn btn-success" @Html.ActionLink("Home", "Index", "Home")</a></p>
-    <h3 style="display:block;">
-       
-        <img src="~/Content/Images/Categories/Citigroup.png" style="width:150px; height:150px; border-radius: 10px;" /><br /><br />
-        
-        <img src="~/Content/Images/Categories/deutsche.jpg" style="width:150px; height:150px; border-radius: 10px;" /><br /><br />
-        
-        <img src="~/Content/Images/Categories/jp.png" style="width:150px; height:150px; border-radius: 10px;" />
-    </h3>
-    
+<h1>Our Clients</h1>
+<hr />
+<div>  
+    <img class="img-thumbnail" style="margin-right:4%;" src="~/Content/Images/Companies/2.jpg" />
+    <img class="img-thumbnail" style="margin-right:4%;" src="~/Content/Images/Companies/1.jpg" />
+    <img class="img-thumbnail" style="margin-right:4%;" src="~/Content/Images/Companies/three3.jpg" />
+    <img class="img-thumbnail" src="~/Content/Images/Companies/aerlingus.png" />
+    <br /><br />
+    <img class="img-thumbnail" style="margin-right:4%;" src="~/Content/Images/Companies/Citigroup.png" />
+    <img class="img-thumbnail" style="margin-right:4%;" src="~/Content/Images/Companies/deutsche.jpg" />
+    <img class="img-thumbnail" style="margin-right:4%;" src="~/Content/Images/Companies/jp.png" />
+    <img class="img-thumbnail" src="~/Content/Images/Companies/3.png" />
 </div>
+@Html.ActionLink("Register", "Register", "Account") |
+@Html.ActionLink("Home", "Index", "Home")
